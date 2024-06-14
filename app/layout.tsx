@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="rtl" lang="fa-Ir">
-      <body className={`${dana.className}`}>{children}</body>
+      <body className={`${dana.className}`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
