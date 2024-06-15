@@ -25,7 +25,7 @@ export default function MenuItems({ session }: UserAvatarProps) {
                 pathname === items.href ? "text-green-600" : "text-gray-500"
               }`}
             >
-              <li className="list-none text-[15px] font-medium md:px-5 md:py-2">
+              <li className="list-none text-[13px] sm:text-[15px] font-medium md:px-5 md:py-2">
                 {items.title}
               </li>
             </Link>
@@ -38,7 +38,7 @@ export default function MenuItems({ session }: UserAvatarProps) {
               pathname === "/admin" ? "text-green-600" : "text-gray-500"
             }`}
           >
-            <li className="list-none text-[15px] font-medium md:px-5 md:py-2">
+            <li className="list-none text-[13px] sm:text-[15px] font-medium md:px-5 md:py-2">
               پنل ادمین
             </li>
           </Link>
