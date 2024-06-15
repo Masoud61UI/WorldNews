@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import SubmitButton from "../ui/SubmitButton";
 import { CheckUserInputs } from "@/lib/actions";
 import { signIn } from "next-auth/react";
-import { redirect } from "next/navigation";
 import { useState } from "react";
+import LoginButton from "../ui/LoginButton";
 
 export default function LoginForm() {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -40,8 +39,8 @@ export default function LoginForm() {
         >
           <div className="space-y-6 font-medium">
             {loginStatus && (
-              <p className="text-red-500 text-sm font-medium mt-4">
-                ایمیل یا رمز عبور شما اشتباه است.
+              <p className="text-red-500 text-sm font-medium mt-2">
+                ایمیل یا رمز عبور وارد شده اشتباه است.
               </p>
             )}
             <div>
@@ -68,7 +67,7 @@ export default function LoginForm() {
             </div>
           </div>
           <div className="!mt-10">
-            <SubmitButton />
+            <LoginButton/>
           </div>
           <p className="text-sm mt-6 text-center text-gray-600">
             حساب کاربری ندارید؟{" "}

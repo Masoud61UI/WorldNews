@@ -13,3 +13,8 @@ export interface UserAvatarProps {
 export interface UserProps {
   name: string;
 }
+
+export interface MenuItem {
+  title: string;
+  href: string;
+}

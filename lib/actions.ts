@@ -49,8 +49,6 @@ export const CheckUserInputs = async (formdata: FormData) => {
     } else {
       return { success: false, message: "Invalid credentials" };
     }
-
-    return { success: true };
   } catch (error) {
     console.log("CheckUserEmail", error);
   }
