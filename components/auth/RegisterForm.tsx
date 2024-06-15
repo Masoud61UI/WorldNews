@@ -68,7 +68,7 @@ export default function RegisterForm() {
             </div>
           </div>
           <div className="!mt-10">
-            <SubmitButton />
+            <SubmitButton text={"ثبت نام"} />
           </div>
           <p className="text-sm mt-6 text-center text-gray-600">
             از قبل حساب کاربری دارید؟{" "}

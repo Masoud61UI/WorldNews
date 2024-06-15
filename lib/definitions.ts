@@ -18,3 +18,11 @@ export interface MenuItem {
   title: string;
   href: string;
 }
+
+export interface SubmitBtnProps {
+  text: string;
+}
+
+export interface DeleteBtnProps {
+  id: number;
+}

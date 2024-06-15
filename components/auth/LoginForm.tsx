@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CheckUserInputs } from "@/lib/actions";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-import LoginButton from "../ui/LoginButton";
+import SubmitButton from "../ui/SubmitButton";
 
 export default function LoginForm() {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -67,7 +67,7 @@ export default function LoginForm() {
             </div>
           </div>
           <div className="!mt-10">
-            <LoginButton/>
+            <SubmitButton text="ورود" />
           </div>
           <p className="text-sm mt-6 text-center text-gray-600">
             حساب کاربری ندارید؟{" "}

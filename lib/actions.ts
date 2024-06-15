@@ -2,6 +2,7 @@
 
 import { compare, hash } from "bcrypt";
 import prismadb from "./prismadb";
+import { revalidatePath } from "next/cache";
 
 export const CreateUserAction = async (formData: FormData) => {
   try {
@@ -51,5 +52,48 @@ export const CheckUserInputs = async (formdata: FormData) => {
     }
   } catch (error) {
     console.log("CheckUserEmail", error);
+  }
+};
+
+export const CreatePostAction = async (formData: FormData) => {
+  try {
+    const { title, body, image } = Object.fromEntries(formData);
+
+    const address = String(title).split(" ").join("-");
+
+    const post = await prismadb.post.create({
+      data: {
+        title: title as string,
+        address,
+        body: body as string,
+        image: image as string,
+      },
+    });
+
+    if (!post) return { success: false };
+
+    revalidatePath("/admin");
+
+    return { success: true };
+  } catch (error) {
+    console.log("CreatePostAction", error);
+  }
+};
+
+export const DeletePostAction = async (id: number) => {
+  try {
+    const deletePost = await prismadb.post.delete({
+      where: {
+        id,
+      },
+    });
+
+    if (!deletePost) return { success: false };
+
+    revalidatePath("/admin");
+
+    return { success: true };
+  } catch (error) {
+    console.log("DeletePostAction", error);
   }
 };

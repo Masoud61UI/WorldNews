@@ -1,3 +1,6 @@
+import NewPost from "@/components/admin/NewPost";
+import PostList from "@/components/admin/PostList";
+import Container from "@/components/ui/Container";
 import { authOption } from "@/lib/next-auth";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
@@ -5,7 +8,7 @@ import Link from "next/link";
 export default async function page() {
   const session = await getServerSession(authOption);
 
-  if (session?.user.userRole !== "ADMIN")
+  if (!session || session?.user.userRole !== "ADMIN")
     return (
       <div className="flex h-80 flex-col items-center justify-center">
         <h2 className="text-2xl font-semibold text-red-500 mb-5">
@@ -20,5 +23,15 @@ export default async function page() {
       </div>
     );
 
-  return <div>admin</div>;
+  return <div>
+    <Container className="mt-8 flex flex-col gap-x-10 md:flex-row">
+      <div className="w-full p-2">
+        <NewPost/>
+      </div>
+      <div className="my-5 block border-b shadow-md md:hidden"></div>
+      <div className="w-full p-2 md:h-96 md:overflow-y-auto">
+        <PostList/>
+      </div>
+    </Container>
+  </div>;
 }
