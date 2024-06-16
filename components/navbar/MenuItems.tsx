@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const menuItems: MenuItem[] = [
   { title: "صفحه اصلی", href: "/" },
-  { title: "وبلاگ", href: "/blogs" },
+  { title: "وبلاگ", href: "/blog" },
   { title: "درباره‌ما", href: "/about" },
 ];
 

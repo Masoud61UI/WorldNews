@@ -26,3 +26,9 @@ export interface SubmitBtnProps {
 export interface DeleteBtnProps {
   id: number;
 }
+
+export interface paramsProps {
+  params: {
+    postAddress: string;
+  };
+}
