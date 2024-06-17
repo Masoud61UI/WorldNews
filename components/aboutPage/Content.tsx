@@ -36,7 +36,13 @@ export default function Content() {
               </li>
             </ul>
           </div>
-          <Image src={aboutImg} width={800} height={800} alt="About Image" />
+          <Image
+            src={aboutImg}
+            width={800}
+            height={800}
+            alt="About Image"
+            className="w-full object-contain"
+          />
         </div>
       </div>
     </div>
