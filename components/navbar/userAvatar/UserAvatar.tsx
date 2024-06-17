@@ -9,7 +9,7 @@ export default async function UserAvatar({ session }: UserAvatarProps) {
       <div>
         <Link
           href={"/login"}
-          className="px-4 py-2 font-medium bg-black text-green-500 rounded-md hover:opacity-90 transition duration-180 ease-out hover:ease-in"
+          className="px-4 py-2 font-semibold bg-black text-green-500 rounded-md hover:opacity-90 transition duration-180 ease-out hover:ease-in"
         >
           ورود / ثبت نام
         </Link>

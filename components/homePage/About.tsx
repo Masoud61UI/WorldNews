@@ -34,7 +34,7 @@ export default function About() {
           </div>
           <Link
             href="/about"
-            className="rounded-md bg-black px-7 py-3 text-base font-bold text-green-500 hover:opacity-90 transition duration-180 ease-out hover:ease-in"
+            className="rounded-md bg-black px-7 py-3 text-base font-semibold text-green-500 hover:opacity-90 transition duration-180 ease-out hover:ease-in"
           >
             درباره ما
           </Link>
