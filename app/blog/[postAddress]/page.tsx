@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import { paramsProps } from "@/lib/definitions";
 import prismadb from "@/lib/prismadb";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+export const generateMetadata = ({ params }: paramsProps): Metadata => {
+  return {
+    title: `مقاله ${decodeURI(params.postAddress)}`,
+  };
+};
 
 export default async function page({ params }: paramsProps) {
   const post = await prismadb.post.findUnique({
@@ -29,7 +36,9 @@ export default async function page({ params }: paramsProps) {
           </div>
           <div className="space-y-6 basis-5/5 lg:basis-3/5">
             <h1 className="text-lg sm:text-2xl font-bold">{post.title}</h1>
-            <p className="text-justify text-gray-600 text-sm sm:text-base">{post.body}</p>
+            <p className="text-justify text-gray-600 text-sm sm:text-base">
+              {post.body}
+            </p>
           </div>
         </div>
       </Container>

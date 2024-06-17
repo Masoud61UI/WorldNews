@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import prismadb from "@/lib/prismadb";
 import { Post } from "@prisma/client";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "وبلاگ",
+};
 
 export default async function page() {
   const posts = await prismadb.post.findMany({

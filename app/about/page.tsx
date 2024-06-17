@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Content from "@/components/aboutPage/Content";
 import Features from "@/components/aboutPage/Features";
 import HeroSection from "@/components/aboutPage/HeroSection";
 import Container from "@/components/ui/Container";
+
+export const metadata: Metadata = {
+  title: "درباره ما",
+};
 
 export default function page() {
   return (
