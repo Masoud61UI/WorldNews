@@ -18,7 +18,7 @@ export default function SocialMedia() {
     <ul className="flex items-center justify-center flex-wrap gap-y-3 gap-x-6 mt-8">
       {socials.map((items) => {
         return (
-          <li>
+          <li key={items.name}>
             <Link key={items.name} href={items.href}>
               <Image src={items.logo} width={24} height={24} alt={items.name} />
             </Link>
