@@ -1,4 +1,5 @@
 import { Session } from "next-auth";
+import { IconType } from "react-icons";
 
 export interface ContainerProps {
   children: React.ReactNode;
@@ -31,4 +32,16 @@ export interface paramsProps {
   params: {
     postAddress: string;
   };
+}
+
+export interface SocialProps {
+  name: string;
+  logo: string;
+  href: string;
+}
+
+export interface ContactProps {
+  title: string;
+  icon: IconType;
+  content: string;
 }
