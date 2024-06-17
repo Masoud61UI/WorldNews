@@ -29,11 +29,7 @@ export default function HeroSection() {
       </div>
       <div className="flex-1 md:block">
         <div className="relative flex items-center justify-center m-auto size-[18rem] md:size-[28rem] lg:size-[32rem]">
-          <Image
-            src={heroImage}
-            alt="hero-image"
-            width={430} height={430}
-          />
+          <Image src={heroImage} alt="hero-image" width={430} height={430} />
         </div>
       </div>
     </div>
