@@ -11,9 +11,14 @@ const dana = localFont({
 export const metadata: Metadata = {
   title: {
     default: "خبرنامه - اخبارهای روز دنیا",
-    template: "%s | خبرنامه"
+    template: "%s | خبرنامه",
   },
   description: "وبسایت جدیدترین اخبارهای جهان",
+  icons: {
+    icon: ["/favicon.ico?v=4"],
+    apple: ["/apple-touch-icon.png?v=4"],
+    shortcut: ["/apple-touch-icon.png"],
+  },
 };
 
 export default function RootLayout({
